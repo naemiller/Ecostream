@@ -129,7 +129,6 @@
             color: var(--secondary);
         }
         
-        /* Updated Video Wrapper Design */
         .video-wrapper {
             width: 100%;
             border-radius: 12px;
@@ -153,6 +152,22 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+
+        /* Success Message Styles */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #e6fffa;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            color: var(--text);
+        }
+        .success-message h3 {
+            color: var(--secondary);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -170,7 +185,6 @@
             <h1>Reach Every Inch. Warm Every Drop.</h1>
             <p class="tagline">EcoStream is the revolutionary electric heated lotion back applicator designed to end the struggle of dry, unreachable skin with soothing, spa-like warmth.</p>
             
-            <!-- Fixed: pointing exactly to commercial.MP4 case-sensitive matching -->
             <div class="video-wrapper">
                 <video autoplay muted loop playsinline controls>
                     <source src="commercial.MP4" type="video/mp4">
@@ -180,43 +194,52 @@
         </div>
 
         <div class="cta-card" id="prepurchase">
-            <h2>Support Our Campaign</h2>
-            <p>Choose an option below to secure your EcoStream or join our journey.</p>
-            
-            <!-- Pre-purchase Form Tier Selection -->
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="tier">Select Your Backer Reward Tier:</label>
-                    <select id="tier" name="tier">
-                        <option value="early-bird">Early Bird Pre-Purchase — 40% OFF</option>
-                        <option value="kickstarter-special">Crowdsourcing Special — 25% OFF</option>
-                        <option value="double-pack">EcoStream Double Pack — 50% OFF</option>
-                    </select>
-                </div>
+            <!-- This container holds everything inside the card so we can toggle visibility -->
+            <div id="form-container">
+                <h2>Support Our Campaign</h2>
+                <p>Choose an option below to secure your EcoStream or join our journey.</p>
+                
+                <!-- Pre-purchase Form -->
+                <form id="preorder-form" action="https://sequenzy.com" method="POST">
+                    <div class="form-group">
+                        <label for="tier">Select Your Backer Reward Tier:</label>
+                        <select id="tier" name="tier">
+                            <option value="early-bird">Early Bird Pre-Purchase — 40% OFF</option>
+                            <option value="kickstarter-special">Crowdsourcing Special — 25% OFF</option>
+                            <option value="double-pack">EcoStream Double Pack — 50% OFF</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required placeholder="John Doe">
-                </div>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required placeholder="you@example.com">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    </div>
 
-                <button type="submit" class="btn">Proceed to Pre-Purchase</button>
-            </form>
+                    <button type="submit" class="btn">Proceed to Pre-Purchase</button>
+                </form>
 
-            <div style="text-align: center; margin: 1.5rem 0; color: #94a3b8;">— OR —</div>
+                <div style="text-align: center; margin: 1.5rem 0; color: #94a3b8;">— OR —</div>
 
-            <!-- Simple Email Signup Form -->
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="newsletter-email">Just want updates? Join our launch list:</label>
-                    <input type="email" id="newsletter-email" required placeholder="Enter email for 10% launch discount">
-                </div>
-                <button type="submit" class="btn btn-secondary">Get Launch Updates</button>
-            </form>
+                <!-- Simple Email Signup Form -->
+                <form id="updates-form" action="https://sequenzy.com" method="POST">
+                    <div class="form-group">
+                        <label for="newsletter-email">Just want updates? Join our launch list:</label>
+                        <input type="email" id="newsletter-email" name="email" required placeholder="Enter email for 10% launch discount">
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Get Launch Updates</button>
+                </form>
+            </div>
+
+            <!-- Hidden Custom Success Message Box -->
+            <div id="success-box" class="success-message">
+                <h3>🎉 Thank You!</h3>
+                <p>Your details have been successfully submitted to our campaign list. We will reach out to you with the next steps shortly!</p>
+            </div>
         </div>
     </section>
 
@@ -237,5 +260,22 @@
         </div>
     </section>
 
-</body>
-</html>
+    <!-- JavaScript to intercept submission, send data via API, and display success text -->
+    <script>
+        const formContainer = document.getElementById('form-container');
+        const successBox = document.getElementById('success-box');
+
+        async function handleFormSubmit(event) {
+            event.preventDefault(); // Stop standard redirect/refresh
+            
+            const form = event.target;
+            const formData = new FormData(form);
+
+            // Change button text to show it is processing
+            const button = form.querySelector('button');
+            const originalButtonText = button.textContent;
+            button.textContent = 'Sending...';
+            button.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
