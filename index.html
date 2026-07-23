@@ -153,20 +153,34 @@
             margin-bottom: 1rem;
         }
 
-        /* Success Message Styles */
+        /* Sequenzy Embedded Capture Styles */
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"]{box-sizing:border-box;width:100%;margin:0 auto;color:#111827;font-family:inherit;}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-stack>*{grid-column:1/-1}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-heading{margin:0 0 0.5rem 0;font-family:inherit;font-weight:600;}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-heading-2{font-size:clamp(22px,4vw,26px);line-height:1.25;color:var(--secondary);}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text{margin:0 0 1.5rem 0;line-height:1.55}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text-paragraph{color:#4b5563;font-size:15px;}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text-eyebrow{color:var(--dark);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features{display:grid;gap:12px;margin-top:1.5rem;}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features article{border:1px solid #e5e7eb;border-radius:14px;padding:14px;text-align:left;}
+        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features p{margin:6px 0 0;color:#6b7280;font-size:14px;line-height:1.45}
+        @media(max-width:680px){[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features{grid-template-columns:1fr!important}}
+
+        /* Success Message Box Styles */
         .success-message {
             display: none;
             text-align: center;
             padding: 2rem 1rem;
             background: #e6fffa;
             border: 2px solid var(--primary);
-            border-radius: 8px;
+            border-radius: 12px;
             color: var(--text);
         }
         .success-message h3 {
             color: var(--secondary);
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
         }
     </style>
 </head>
@@ -194,13 +208,15 @@
         </div>
 
         <div class="cta-card" id="prepurchase">
-            <!-- This container holds everything inside the card so we can toggle visibility -->
-            <div id="form-container">
-                <h2>Support Our Campaign</h2>
-                <p>Choose an option below to secure your EcoStream or join our journey.</p>
+            <!-- Container wrapper for switching views upon completion -->
+            <div id="form-container" class="sequenzy-capture-root" data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3">
                 
-                <!-- Pre-purchase Form -->
-                <form id="preorder-form" action="https://sequenzy.com" method="POST">
+                <p class="sequenzy-capture-text sequenzy-capture-text-eyebrow" style="text-align:center">Early access</p>
+                <h2 class="sequenzy-capture-heading sequenzy-capture-heading-2" style="text-align:center">Be first in when we open</h2>
+                <p class="sequenzy-capture-text sequenzy-capture-text-paragraph" style="text-align:center">We invite a new group every week. Leave your email and your invite comes as soon as a spot opens.</p>
+                
+                <!-- Main Integrated Form -->
+                <form id="preorder-form" class="sequenzy-capture-stack" action="https://sequenzy.com" method="POST">
                     <div class="form-group">
                         <label for="tier">Select Your Backer Reward Tier:</label>
                         <select id="tier" name="tier">
@@ -225,57 +241,7 @@
 
                 <div style="text-align: center; margin: 1.5rem 0; color: #94a3b8;">— OR —</div>
 
-                <!-- Simple Email Signup Form -->
+                <!-- Secondary Launch Updates Form -->
                 <form id="updates-form" action="https://sequenzy.com" method="POST">
                     <div class="form-group">
                         <label for="newsletter-email">Just want updates? Join our launch list:</label>
-                        <input type="email" id="newsletter-email" name="email" required placeholder="Enter email for 10% launch discount">
-                    </div>
-                    <button type="submit" class="btn btn-secondary">Get Launch Updates</button>
-                </form>
-            </div>
-
-            <!-- Hidden Custom Success Message Box -->
-            <div id="success-box" class="success-message">
-                <h3>🎉 Thank You!</h3>
-                <p>Your details have been successfully submitted to our campaign list. We will reach out to you with the next steps shortly!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="features-container">
-            <div class="feature-box">
-                <h3>🔥 Instant Thermal Warmth</h3>
-                <p>Heats your favorite lotions to the perfect temperature in seconds for maximum skin absorption.</p>
-            </div>
-            <div class="feature-box">
-                <h3>📐 Ergonomic Extension</h3>
-                <p>Custom curved handle effortlessly reaches 100% of your back without straining your shoulders.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔋 Eco-Friendly & Rechargeable</h3>
-                <p>Equipped with a long-lasting, fast-charging battery pack to minimize waste and maximize convenience.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript to intercept submission, send data via API, and display success text -->
-    <script>
-        const formContainer = document.getElementById('form-container');
-        const successBox = document.getElementById('success-box');
-
-        async function handleFormSubmit(event) {
-            event.preventDefault(); // Stop standard redirect/refresh
-            
-            const form = event.target;
-            const formData = new FormData(form);
-
-            // Change button text to show it is processing
-            const button = form.querySelector('button');
-            const originalButtonText = button.textContent;
-            button.textContent = 'Sending...';
-            button.disabled = true;
-
-            try {
-                const response = await fetch(form.action, {
