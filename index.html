@@ -39,7 +39,33 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--secondary);
+            text-decoration: none;
         }
+        
+        /* Navigation Links Layout */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .hero {
             max-width: 1100px;
             margin: 0 auto;
@@ -51,6 +77,7 @@
         }
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; } /* Standard hidden behavior for simple mobile layouts */
         }
         h1 {
             font-size: 3rem;
@@ -188,15 +215,23 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">EcoStream™</div>
-            <a href="#prepurchase" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Pre-Order Now</a>
+            <a href="index.html" class="logo">EcoStream™</a>
+            
+            <div class="nav-actions">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="founder.html">Meet the Founder</a></li>
+                    </ul>
+                </nav>
+                <a href="#prepurchase" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Pre-Order Now</a>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <div>
             <span class="badge">World's First</span>
-            <!-- UPDATED: Title changed to target general applicator language -->
             <h1>Warm Every Drop. Soothe Your Skin.</h1>
             <p class="tagline">EcoStream is the revolutionary electric heated lotion applicator designed to end the discomfort of cold skincare with soothing, spa-like warmth.</p>
             
@@ -214,34 +249,3 @@
                 <p class="sequenzy-capture-text sequenzy-capture-text-eyebrow" style="text-align:center">Early access</p>
                 <h2 class="sequenzy-capture-heading sequenzy-capture-heading-2" style="text-align:center">Be first in when we open</h2>
                 <p class="sequenzy-capture-text sequenzy-capture-text-paragraph" style="text-align:center">We invite a new group every week. Leave your email and your invite comes as soon as a spot opens.</p>
-                
-                <!-- Main Integrated Form -->
-                <form id="preorder-form" class="sequenzy-capture-stack" action="https://sequenzy.com" method="POST">
-                    <div class="form-group">
-                        <label for="tier">Select Your Backer Reward Tier:</label>
-                        <select id="tier" name="tier">
-                            <option value="early-bird">Early Bird Pre-Purchase — 40% OFF</option>
-                            <option value="kickstarter-special">Crowdsourcing Special — 25% OFF</option>
-                            <option value="double-pack">EcoStream Double Pack — 50% OFF</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com">
-                    </div>
-
-                    <button type="submit" class="btn">Proceed to Pre-Purchase</button>
-                </form>
-
-                <div style="text-align: center; margin: 1.5rem 0; color: #94a3b8;">— OR —</div>
-
-                <!-- Secondary Launch Updates Form -->
-                <form id="updates-form" action="https://sequenzy.com" method="POST">
-                    <div class="form-group">
-                        <label for="newsletter-email">Just want updates? Join our launch list:</label>
