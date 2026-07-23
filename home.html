@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoStream | World's First Heated Lotion Back Applicator</title>
+    <style>
+        :root {
+            --primary: #00a896;
+            --secondary: #028090;
+            --dark: #02c39a;
+            --bg: #f0fdfa;
+            --text: #05668d;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+        header {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .cta-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: var(--secondary);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            margin-top: 1rem;
+        }
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        .features {
+            background: white;
+            padding: 4rem 1rem;
+        }
+        .features-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-box {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .feature-box h3 {
+            color: var(--secondary);
+        }
+        .placeholder-img {
+            background: #e2e8f0;
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+        .badge {
+            background: var(--dark);
+            color: white;
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">EcoStream™</div>
+            <a href="#prepurchase" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Pre-Order Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <span class="badge">World's First</span>
+            <h1>Reach Every Inch. Warm Every Drop.</h1>
+            <p class="tagline">EcoStream is the revolutionary electric heated lotion back applicator designed to end the struggle of dry, unreachable skin with soothing, spa-like warmth.</p>
+            <div class="placeholder-img">
+                <!-- Replace with your product image or video embed -->
+                [ Product Video / 3D Render Placeholder ]
+            </div>
+        </div>
+
+        <div class="cta-card" id="prepurchase">
+            <h2>Support Our Campaign</h2>
+            <p>Choose an option below to secure your EcoStream or join our journey.</p>
+            
+            <!-- Pre-purchase Form Tier Selection -->
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="tier">Select Your Backer Reward Tier:</label>
+                    <select id="tier" name="tier">
+                        <option value="early-bird">Early Bird Pre-Purchase — 40% OFF</option>
+                        <option value="kickstarter-special">Crowdsourcing Special — 25% OFF</option>
+                        <option value="double-pack">EcoStream Double Pack — 50% OFF</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="you@example.com">
+                </div>
+
+                <button type="submit" class="btn">Proceed to Pre-Purchase</button>
+            </form>
+
+            <div style="text-align: center; margin: 1.5rem 0; color: #94a3b8;">— OR —</div>
+
+            <!-- Simple Email Signup Form -->
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="newsletter-email">Just want updates? Join our launch list:</label>
+                    <input type="email" id="newsletter-email" required placeholder="Enter email for 10% launch discount">
+                </div>
+                <button type="submit" class="btn btn-secondary">Get Launch Updates</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-box">
+                <h3>🔥 Instant Thermal Warmth</h3>
+                <p>Heats your favorite lotions to the perfect temperature in seconds for maximum skin absorption.</p>
+            </div>
+            <div class="feature-box">
+                <h3>📐 Ergonomic Extension</h3>
+                <p>Custom curved handle effortlessly reaches 100% of your back without straining your shoulders.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🔋 Eco-Friendly & Rechargeable</h3>
+                <p>Equipped with a long-lasting, fast-charging battery pack to minimize waste and maximize convenience.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
