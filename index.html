@@ -1,251 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoStream | World's First Heated Lotion Applicator</title>
-    <style>
-        :root {
-            --primary: #00a896;
-            --secondary: #028090;
-            --dark: #02c39a;
-            --bg: #f0fdfa;
-            --text: #05668d;
-        }
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.5;
-        }
-        header {
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--secondary);
-            text-decoration: none;
-        }
-        
-        /* Navigation Links Layout */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>EcoStream | World's First Heated Lotion Applicator</title> 
+<style> 
+:root { 
+--primary: #00a896; 
+--secondary: #028090; 
+--dark: #02c39a; 
+--bg: #f0fdfa; 
+--text: #05668d; 
+} 
+body { 
+font-family: system-ui, -apple-system, sans-serif; 
+margin: 0; 
+padding: 0; 
+background: var(--bg); 
+color: var(--text); 
+line-height: 1.5; 
+} 
+header { 
+background: white; 
+padding: 1rem; 
+box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+position: sticky; 
+top: 0; 
+z-index: 100; 
+} 
+.nav-container { 
+max-width: 1100px; 
+margin: 0 auto; 
+display: flex; 
+justify-content: space-between; 
+align-items: center; 
+} 
+.logo { 
+font-size: 1.5rem; font-weight: bold; color: var(--secondary); text-decoration: none; 
+} 
+/* Navigation Links Layout */ 
+.nav-links { 
+display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; 
+} 
+.nav-links a { 
+color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.2s ease; 
+} 
+.nav-links a:hover { 
+color: var(--primary); 
+} 
+.nav-actions { 
+display: flex; align-items: center; gap: 1.5rem; 
+} 
+.hero { 
+max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; 
+} 
+@media (max-width: 768px) { 
+.hero { grid-template-columns: 1fr; text-align: center; } 
+.nav-links { display: none; } /* Standard hidden behavior for simple mobile layouts */ 
+} 
+h1 { 
+font-size: 3rem; margin-bottom: 1rem; color: var(--secondary); 
+} 
+.tagline { 
+font-size: 1.25rem; margin-bottom: 2rem; 
+} 
+.cta-card { 
+background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+} 
+.form-group { 
+margin-bottom: 1.5rem; 
+} 
+label { 
+display: block; font-weight: bold; margin-bottom: 0.5rem; 
+} 
+input, select { 
+width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; font-size: 1rem;
+} 
+.btn { 
+display: block; width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s; 
+} 
+.btn:hover { 
+background: var(--secondary); 
+} 
+.btn-secondary { 
+background: transparent; color: var(--secondary); border: 2px solid var(--secondary); margin-top: 1rem; 
+} 
+.btn-secondary:hover { 
+background: var(--secondary); color: white; 
+} 
+.features { 
+background: white; padding: 4rem 1rem; 
+} 
+.features-container { 
+max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; 
+} 
+.feature-box { 
+text-align: center; padding: 1.5rem; 
+} 
+.feature-box h3 { 
+color: var(--secondary); 
+} 
+.video-wrapper { 
+width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: #000; display: flex; 
+} 
+.video-wrapper video { 
+width: 100%; height: auto; display: block; object-fit: cover; 
+} 
+.badge { 
+background: var(--dark); color: white; padding: 0.25rem 0.7rem; border-radius: 50px; font-size: 0.85rem; display: inline-block; margin-bottom: 1rem; 
+} 
+/* Sequenzy Embedded Capture Styles */ 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"]{box-sizing:border-box;width:100%;margin:0 auto;color:#111827;font-family:inherit;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-stack>*{grid-column:1/-1} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-heading{margin:0;font-family:inherit;font-weight:600;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-heading-2{font-size:clamp(22px,4vw,26px);line-height:1.25;color:var(--secondary);margin-bottom:0.5rem;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text{margin:0;line-height:1.55} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text-paragraph{color:#4b5563;font-size:15px;margin-bottom:1.5rem;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text-eyebrow{color:var(--dark);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.5rem;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features{display:grid;gap:12px;margin-top:1.5rem;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features article{border:1px solid #e5e7eb;border-radius:14px;padding:14px;text-align:left;} 
+[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features p{margin:6px 0 0;color:#6b7280;font-size:14px;line-height:1.45} 
+@media(max-width:680px){[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features{grid-template-columns:1fr!important}} 
+/* Success Message Box Styles */ 
+.success-message { 
+display: none; text-align: center; padding: 2rem 1rem; background: #e6fffa; border: 2px solid var(--primary); border-radius: 12px; color: var(--text); 
+} 
+.success-message h3 { 
+color: var(--secondary); margin-top: 0; font-size: 1.75rem; 
+} 
+</style> 
+</head> 
+<body> 
+<header> 
+<div class="nav-container"> 
+<a href="index.html" class="logo">EcoStream™</a> 
+<div class="nav-actions"> 
+<nav> 
+<ul class="nav-links"> 
+<li><a href="index.html">Home</a></li> 
+<li><a href="founder.html">Meet the Founder</a></li> 
+</ul> 
+</nav> 
+<a href="#prepurchase" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Pre-Order Now</a> 
+</div> 
+</div> 
+</header> 
+<section class="hero"> 
+<div> 
+<span class="badge">World's First</span> <h1>Warm Every Drop. Soothe Your Skin.</h1> <p class="tagline">EcoStream is the revolutionary electric heated lotion applicator designed to end the discomfort of cold skincare with soothing, spa-like warmth.</p> 
+<div class="video-wrapper"> 
+<video autoplay muted loop playsinline controls> 
+<source src="commercial.MP4" type="video/mp4"> Your browser does not support HTML5 video. 
+</video> 
+</div> 
+</div> 
+<div class="cta-card" id="prepurchase"> 
+<div id="form-container" class="sequenzy-capture-root" data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"> 
+<p class="sequenzy-capture-text sequenzy-capture-text-eyebrow" style="text-align:center">Pre-Order & Support</p> 
+<h2 class="sequenzy-capture-heading sequenzy-capture-heading-2" style="text-align:center">Select Your Tier</h2> 
+<p class="sequenzy-capture-text sequenzy-capture-text-paragraph" style="text-align:center">Secure your product packages or support our production lines below.</p>
 
-        .hero {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-        @media (max-width: 768px) {
-            .hero { grid-template-columns: 1fr; text-align: center; }
-            .nav-links { display: none; } /* Standard hidden behavior for simple mobile layouts */
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-        .tagline {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        .cta-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        input, select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .btn:hover {
-            background: var(--secondary);
-        }
-        .btn-secondary {
-            background: transparent;
-            color: var(--secondary);
-            border: 2px solid var(--secondary);
-            margin-top: 1rem;
-        }
-        .btn-secondary:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        .features {
-            background: white;
-            padding: 4rem 1rem;
-        }
-        .features-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .feature-box {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        .feature-box h3 {
-            color: var(--secondary);
-        }
-        
-        .video-wrapper {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: #000;
-            display: flex;
-        }
-        .video-wrapper video {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-        .badge {
-            background: var(--dark);
-            color: white;
-            padding: 0.25rem 0.7rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
+<form id="order-form" onsubmit="redirectToStripe(event)">
+<div class="form-group">
+<label for="package-select">Choose Package or Support Option</label>
+<select id="package-select" required>
+<option value="" disabled selected>Select an option...</option>
+<option value="single">EcoStream - 1 Pack</option>
+<option value="double">EcoStream - Double Pack</option>
+<option value="donate">Donate toward manufacturing</option>
+</select>
+</div>
 
-        /* Sequenzy Embedded Capture Styles */
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"]{box-sizing:border-box;width:100%;margin:0 auto;color:#111827;font-family:inherit;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-stack>*{grid-column:1/-1}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-heading{margin:0;font-family:inherit;font-weight:600;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-heading-2{font-size:clamp(22px,4vw,26px);line-height:1.25;color:var(--secondary);margin-bottom:0.5rem;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text{margin:0;line-height:1.55}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text-paragraph{color:#4b5563;font-size:15px;margin-bottom:1.5rem;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-text-eyebrow{color:var(--dark);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.5rem;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features{display:grid;gap:12px;margin-top:1.5rem;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features article{border:1px solid #e5e7eb;border-radius:14px;padding:14px;text-align:left;}
-        [data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features p{margin:6px 0 0;color:#6b7280;font-size:14px;line-height:1.45}
-        @media(max-width:680px){[data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3"] .sequenzy-capture-features{grid-template-columns:1fr!important}}
+<div class="form-group">
+<label for="user-email">Email Address</label>
+<input type="email" id="user-email" placeholder="name@example.com" required>
+</div>
 
-        /* Success Message Box Styles */
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 2rem 1rem;
-            background: #e6fffa;
-            border: 2px solid var(--primary);
-            border-radius: 12px;
-            color: var(--text);
-        }
-        .success-message h3 {
-            color: var(--secondary);
-            margin-top: 0;
-            font-size: 1.75rem;
-        }
-    </style>
-</head>
-<body>
+<button type="submit" class="btn">Proceed to Payment</button>
+</form>
+</div>
+</div>
+</section>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">EcoStream™</a>
-            
-            <div class="nav-actions">
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="founder.html">Meet the Founder</a></li>
-                    </ul>
-                </nav>
-                <a href="#prepurchase" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Pre-Order Now</a>
-            </div>
-        </div>
-    </header>
+<script>
+function redirectToStripe(event) {
+event.preventDefault();
 
-    <section class="hero">
-        <div>
-            <span class="badge">World's First</span>
-            <h1>Warm Every Drop. Soothe Your Skin.</h1>
-            <p class="tagline">EcoStream is the revolutionary electric heated lotion applicator designed to end the discomfort of cold skincare with soothing, spa-like warmth.</p>
-            
-            <div class="video-wrapper">
-                <video autoplay muted loop playsinline controls>
-                    <source src="commercial.MP4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
-            </div>
-        </div>
+const selectedPackage = document.getElementById('package-select').value;
+const userEmail = encodeURIComponent(document.getElementById('user-email').value);
 
-        <div class="cta-card" id="prepurchase">
-            <div id="form-container" class="sequenzy-capture-root" data-sequenzy-form-root="borbpu98buq0ta4cevbb7yu3">
-                
-                <p class="sequenzy-capture-text sequenzy-capture-text-eyebrow" style="text-align:center">Early access</p>
-                <h2 class="sequenzy-capture-heading sequenzy-capture-heading-2" style="text-align:center">Be first in when we open</h2>
-                <p class="sequenzy-capture-text sequenzy-capture-text-paragraph" style="text-align:center">We invite a new group every week. Leave your email and your invite comes as soon as a spot opens.</p>
+// Define your payment mapping object
+const stripeLinks = {
+single: "https://buy.stripe.com/14A7sD9pU40E7QW4R7awo01",
+double: "YOUR_DOUBLE_PACK_STRIPE_URL",
+donate: "YOUR_DONATION_STRIPE_URL"
+};
+
+let targetUrl = stripeLinks[selectedPackage];
+
+// If placeholder links aren't set yet, alert user
+if (!targetUrl || targetUrl.startsWith("YOUR_")) {
+alert("Payment configuration for this option is pending. Please check back shortly!");
+return;
+}
+
+// Automatically pass customer email parameters to Stripe checkout if configured
+if (userEmail) {
+targetUrl += `?prefilled_email=${userEmail}`;
+}
+
+// Redirect client to Stripe Hosted Checkout
+window.location.href = targetUrl;
+}
+</script>
+</body>
+</html>
