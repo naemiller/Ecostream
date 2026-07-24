@@ -191,14 +191,25 @@ color: var(--secondary); margin-top: 0; font-size: 1.75rem;
       <h2>Claim Your 10% EcoStream Launch Discount! </h2>
       <p>The clock is ticking. Join the EcoStream community now to unlock secret product updates and guaranteed launch savings before we launch.</p>
     </div>
-    <form class="newsletter-form" action="#" method="POST">
+    
+    <!-- CHANGE 1: Added your Mailchimp Action URL, target="_blank", and IDs -->
+    <form class="newsletter-form" action="PASTE_YOUR_MAILCHIMP_FORM_ACTION_URL_HERE" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
       <div class="input-wrapper">
-        <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+        <!-- CHANGE 2: Added name="EMAIL" and id="mce-EMAIL" -->
+        <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email address" required aria-label="Email address">
       </div>
-      <button type="submit" class="btn-submit">Subscribe</button>
+      
+      <!-- CHANGE 3: Added Mailchimp's required hidden anti-bot field -->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="PASTE_YOUR_MAILCHIMP_BOT_FIELD_NAME_HERE" tabindex="-1" value="">
+      </div>
+
+      <!-- Your button stays perfectly styled with type="submit" -->
+      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn-submit">Subscribe</button>
     </form>
   </div>
 </section>
+
 
 <!-- Additional CSS Styles -->
 <style>
@@ -321,6 +332,33 @@ targetUrl += `?prefilled_email=${userEmail}`;
 window.location.href = targetUrl;
 }
 </script>
+<!-- Modern Newsletter Section -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    <div class="newsletter-content">
+      <h2>Claim Your 10% EcoStream Launch Discount! </h2>
+      <p>The clock is ticking. Join the EcoStream community now to unlock secret product updates and guaranteed launch savings before we launch.</p>
+    </div>
+    
+    <!-- CONNECTED FORM: Set to hit the EcoStream Mailchimp endpoint -->
+    <form class="newsletter-form" action="https://list-manage.com" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      
+      <div class="input-wrapper">
+        <!-- REQUIRED FIELD: Added name="EMAIL" and id="mce-EMAIL" -->
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email address" required aria-label="Email address">
+      </div>
+      
+      <!-- ANTI-BOT PROTECTOR: Hidden field prevents spam sign-ups (Do not delete) -->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="b_5f7e735497ee3e6fb8c8b7f7e_9db836ef2d" tabindex="-1" value="">
+      </div>
+
+      <!-- SUBMIT BUTTON: Sends the data directly to Mailchimp -->
+      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn-submit">Subscribe</button>
+      
+    </form>
+  </div>
+</section>
 
 </body>
  <!-- High-Conversion Investor Relations Section --> 
