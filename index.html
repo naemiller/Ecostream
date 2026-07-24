@@ -55,7 +55,7 @@ display: flex; align-items: center; gap: 1.5rem;
 max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; 
 } 
 @media (max-width: 768px) { 
-.hero { grid-template-columns: 1fr; text-align: center; } 
+.hero, .pitch-grid { grid-template-columns: 1fr !important; text-align: center; } 
 .nav-links { display: none; } /* Standard hidden behavior for simple mobile layouts */ 
 } 
 h1 { 
@@ -129,6 +129,46 @@ display: none; text-align: center; padding: 2rem 1rem; background: #e6fffa; bord
 .success-message h3 { 
 color: var(--secondary); margin-top: 0; font-size: 1.75rem; 
 } 
+
+/* Pitch Section Custom Styles */
+.pitch-section {
+background: white;
+padding: 5rem 1rem;
+border-top: 1px solid rgba(0,0,0,0.05);
+}
+.pitch-container {
+max-width: 1100px;
+margin: 0 auto;
+}
+.pitch-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3rem;
+align-items: center;
+margin-top: 2rem;
+}
+.pitch-metrics {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+}
+.metric-card {
+background: var(--bg);
+padding: 1.5rem;
+border-radius: 8px;
+border-left: 4px solid var(--primary);
+}
+.metric-num {
+font-size: 2rem;
+font-weight: bold;
+color: var(--secondary);
+margin: 0;
+}
+.metric-label {
+font-size: 0.9rem;
+color: var(--text);
+margin: 0.25rem 0 0 0;
+}
 </style> 
 </head> 
 <body> 
@@ -139,6 +179,7 @@ color: var(--secondary); margin-top: 0; font-size: 1.75rem;
 <nav> 
 <ul class="nav-links"> 
 <li><a href="index.html">Home</a></li> 
+<li><a href="#pitch">Investor Pitch</a></li> 
 <li><a href="founder.html">Meet the Founder</a></li> 
 </ul> 
 </nav> 
@@ -183,36 +224,36 @@ color: var(--secondary); margin-top: 0; font-size: 1.75rem;
 </div>
 </section>
 
-<script>
-function redirectToStripe(event) {
-event.preventDefault();
+<!-- Investor Pitch Section -->
+<section class="pitch-section" id="pitch">
+<div class="pitch-container">
+<span class="badge">Investment Opportunity</span>
+<h2 style="font-size: 2.5rem; color: var(--secondary); margin-top: 0.5rem;">Disrupting the $150B Skincare Market</h2>
+<p class="tagline" style="max-width: 800px;">EcoStream solves a universal problem that massive legacy cosmetic brands have ignored for decades: the shock of cold lotion. We are scaling production and seeking strategic partners.</p>
 
-const selectedPackage = document.getElementById('package-select').value;
-const userEmail = encodeURIComponent(document.getElementById('user-email').value);
+<div class="pitch-grid">
+<div>
+<h3 style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 0.5rem;">Why Invest Now?</h3>
+<p>Our fully patented heating technology bridges the gap between everyday skincare routine and professional wellness spa experiences. With low manufacturing costs, high margins, and validation from early consumer testing, EcoStream is uniquely positioned for rapid market capture via direct-to-consumer and retail channels.</p>
+<a href="mailto:investors@://ecostream.com Inquiry" class="btn" style="display: inline-block; width: auto; margin-top: 1rem; padding: 0.75rem 2rem;">Request Pitch Deck</a>
+</div>
 
-// Define your payment mapping object
-const stripeLinks = {
-single: "https://buy.stripe.com/14A7sD9pU40E7QW4R7awo01",
-double: "YOUR_DOUBLE_PACK_STRIPE_URL",
-donate: "YOUR_DONATION_STRIPE_URL"
-};
-
-let targetUrl = stripeLinks[selectedPackage];
-
-// If placeholder links aren't set yet, alert user
-if (!targetUrl || targetUrl.startsWith("YOUR_")) {
-alert("Payment configuration for this option is pending. Please check back shortly!");
-return;
-}
-
-// Automatically pass customer email parameters to Stripe checkout if configured
-if (userEmail) {
-targetUrl += `?prefilled_email=${userEmail}`;
-}
-
-// Redirect client to Stripe Hosted Checkout
-window.location.href = targetUrl;
-}
-</script>
-</body>
-</html>
+<div class="pitch-metrics">
+<div class="metric-card" style="background: #e6fffa; border-left-color: var(--dark);">
+<p class="metric-num" style="color: var(--primary);">Patented</p>
+<p class="metric-label" style="font-weight: bold;">Secured proprietary IP & utility protection</p>
+</div>
+<div class="metric-card">
+<p class="metric-num">High</p>
+<p class="metric-label">Gross margins on product units</p>
+</div>
+<div class="metric-card">
+<p class="metric-num">$150B+</p>
+<p class="metric-label">Global addressable skincare market size</p>
+</div>
+<div class="metric-card">
+<p class="metric-num">TAM</p>
+<p class="metric-label">Massive scalability across product lines</p>
+</div>
+</div>
+</div>
