@@ -1,178 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet the Founder | Ecostream</title>
-    <style>
-        :root {
-            --primary: #2C5E43;
-            --secondary: #8FBC8F;
-            --dark: #1A2E22;
-            --light: #F4F7F5;
-            --white: #FFFFFF;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Meet the Founder | EcoStream</title> 
+<style> 
+:root { 
+--primary: #00a896; 
+--secondary: #028090; 
+--dark: #02c39a; 
+--bg: #f0fdfa; 
+--text: #05668d; 
+--white: #FFFFFF; 
+} 
+* { 
+box-sizing: border-box; margin: 0; padding: 0; 
+} 
+body { 
+font-family: system-ui, -apple-system, sans-serif; 
+line-height: 1.6; 
+background-color: var(--bg); 
+color: var(--text); 
+} 
+header { 
+background-color: var(--white); 
+padding: 20px 0; 
+text-align: center; 
+border-bottom: 1px solid #e2e8f0; 
+} 
+.logo { 
+font-size: 24px; font-weight: bold; color: var(--secondary); text-decoration: none; 
+} 
+.container { 
+max-width: 800px; margin: 60px auto; padding: 40px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+} 
+.profile-section { 
+display: flex; align-items: center; gap: 30px; margin-bottom: 30px; 
+} 
+.image-placeholder { 
+width: 150px; height: 150px; background-color: #E0E8E3; border-radius: 50%; display: flex; align-items: center; text-align: center; justify-content: center; font-size: 14px; color: var(--text); border: 3px solid var(--primary); flex-shrink: 0; object-fit: cover; 
+} 
+h1 { 
+color: var(--secondary); font-size: 32px; margin-bottom: 5px; 
+} 
+.title-sub { 
+font-size: 18px; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; 
+} 
+p { 
+font-size: 16px; margin-bottom: 20px; color: #4b5563; 
+} 
+.highlight-box { 
+background-color: #e6fffa; border-left: 4px solid var(--primary); padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0; font-weight: 500; color: var(--text);
+} 
+.timeline-grid {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 25px 0;
+}
+.timeline-card {
+background: var(--bg); border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: bold; color: var(--secondary);
+}
+.cta-section { 
+text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #e2e8f0; 
+} 
+.btn { 
+display: inline-block; background-color: var(--primary); color: var(--white); padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s ease; 
+} 
+.btn:hover { 
+background-color: var(--secondary); 
+} 
+footer { 
+text-align: center; padding: 40px 0; font-size: 14px; color: #88948E; 
+} 
+@media (max-width: 600px) { 
+.profile-section { flex-direction: column; text-align: center; } 
+} 
+</style> 
+</head> 
+<body> 
+<header> 
+<a href="index.html" class="logo">EcoStream™</a> 
+</header> 
+<main class="container"> 
+<section class="profile-section"> 
+<img class="image-placeholder" src="headshot.jpg" alt="Audjaneea Miller Headshot" /> 
+<div> 
+<h1>Meet the Founder</h1> 
+<div class="title-sub">Audjaneea Miller &bull; Inventor, Engineer & Coder</div> 
+</div> 
+</section> 
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: var(--light);
-            color: var(--dark);
-        }
+<p>Hello! My name is <strong>Audjaneea Miller</strong>. I am the sole inventor, engineer, and programmer behind EcoStream. I am building a hardware company completely from scratch through relentless execution, turning an ambitious vision into reality on my own terms.</p> 
 
-        header {
-            background-color: var(--white);
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 1px solid #E0E8E3;
-        }
+<p>The idea for EcoStream grew out of a common daily frustration: wanting a soothing, warm lotion application experience without dealing with cold formulas or constantly asking family members to help apply lotion to hard-to-reach areas. I realized that a luxury, heated skincare application system could bring physical comfort and independence to millions of users worldwide.</p>
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary);
-            text-decoration: none;
-        }
+<div class="highlight-box">
+"True innovation doesn't wait for perfect conditions. I engineered EcoStream down to the last circuit and coded every single line of this website myself—all while balancing life's heaviest demands."
+</div>
 
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 40px;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+<p>To bring this product to life, I mastered the process of end-to-end execution. I mapped out the schematics, sourced the manufacturing protocols, and built the digital platform you are browsing right now. I did this without a massive corporate team or an outside technical department.</p>
 
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
+<p>Every milestone achieved for EcoStream was forged in the hours between my life's non-negotiable commitments:</p>
 
-        .image-placeholder {
-            width: 150px;
-            height: 150px;
-            background-color: #E0E8E3;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #556B2F;
-            border: 3px solid var(--secondary);
-            flex-shrink: 0;
-            object-fit: cover;
-        }
+<div class="timeline-grid">
+<div class="timeline-card">👶 Raising a Toddler</div>
+<div class="timeline-card">💼 Working a 9-to-5 Job</div>
+<div class="timeline-card">🎓 Part-Time Undergraduate</div>
+<div class="timeline-card">🛠️ Solo Product Architect</div>
+</div>
 
-        h1 {
-            color: var(--primary);
-            font-size: 32px;
-            margin-bottom: 5px;
-        }
+<p>This journey demands obsessive time management, grit, and a strong conviction in the value of the product. By supporting EcoStream, you are not just backing a smart device; you are investing in a lean, hyper-efficient operation led by a founder who knows exactly how to build, deploy, and scale with minimal overhead.</p>
 
-        .title-sub {
-            font-size: 18px;
-            color: var(--secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #4A554F;
-        }
-
-        .highlight-box {
-            background-color: #EAF2EE;
-            border-left: 4px solid var(--primary);
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-        }
-
-        .cta-section {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #E0E8E3;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--dark);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 14px;
-            color: #88948E;
-        }
-
-        @media (max-width: 600px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="https://myecostream.com" class="logo">Ecostream</a>
-    </header>
-
-    <main class="container">
-        <section class="profile-section">
-            <!-- Replace the src attribute below with your actual headshot file path later (e.g., src="audjaneea.jpg") -->
-            <img class="image-placeholder" src="headshot.jpg" alt="Audjaneea Miller Headshot" />
-            <div>
-                <h1>Meet the Founder</h1>
-                <div class="title-sub">Audjaneea Miller &bull; CEO & Founder</div>
-            </div>
-        </section>
-
-        <p>Hello! My name is <strong>Audjaneea Miller</strong>. I am a 28-year-old established web developer based out of Denver, Colorado, and the proud founder and CEO of Ecostream.</p>
-
-        <p>The spark for Ecostream came from a simple, universal frustration: tirelessly asking my family members to help me lotion my back. I quickly realized that if I struggled with this daily routine, millions of others faced the exact same challenge—especially the elderly and those with limited mobility. I knew there had to be a better way, so I decided to build it.</p>
-
-        <div class="highlight-box">
-            "My mission is to bring a luxury, top-of-the-line skincare experience directly into the comfort of your home."
-        </div>
-
-        <p>By blending my technical background with a passion for functional design, Ecostream is transforming daily self-care routines into effortless, high-end experiences accessible to everyone. Thank you for supporting our crowdfunding journey and helping bring this vision to life!</p>
-
-        <section class="cta-section">
-            <p>Want to follow our journey or support our crowdfunding campaign?</p>
-            <a href="https://myecostream.com" class="btn">Visit MyEcostream.com</a>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2026 Ecostream. All rights reserved.
-    </footer>
-
-</body>
+<section class="cta-section"> 
+<p>Ready to back execution and accelerate our production timeline?</p> 
+<a href="index.html#prepurchase" class="btn">Back the Project & Pre-Order Now</a> 
+</section> 
+</main> 
+<footer> &copy; 2026 EcoStream. All rights reserved. </footer> 
+</body> 
 </html>
