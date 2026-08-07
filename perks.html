@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>EcoStream | Exclusive VIP Pre-Order Access</title> 
+<style> 
+:root { 
+--primary: #00a896; 
+--secondary: #028090; 
+--dark: #02c39a; 
+--bg: #f0fdfa; 
+--text: #05668d; 
+} 
+body { 
+font-family: system-ui, -apple-system, sans-serif; 
+margin: 0; 
+padding: 0; 
+background: var(--bg); 
+color: var(--text); 
+line-height: 1.5; 
+} 
+header { 
+background: white; 
+padding: 1rem; 
+box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+position: sticky; top: 0; z-index: 100; 
+} 
+.nav-container { 
+max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; 
+} 
+.logo { 
+font-size: 1.5rem; font-weight: bold; color: var(--secondary); text-decoration: none; 
+} 
+.nav-links { 
+display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; 
+} 
+.nav-links a { 
+color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.2s ease; 
+} 
+.nav-links a:hover { 
+color: var(--primary); 
+} 
+.checkout-section {
+max-width: 1100px; margin: 3rem auto; padding: 0 1rem;
+}
+.page-title {
+text-align: center; color: var(--secondary); font-size: 2.5rem; margin-bottom: 0.5rem;
+}
+.page-subtitle {
+text-align: center; color: #475569; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;
+}
+.tier-layout {
+display: grid; gap: 2rem; margin-bottom: 4rem;
+}
+.tier-card {
+background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 320px; gap: 2rem; transition: border-color 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+}
+.tier-card:hover {
+border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,168,150,0.05);
+}
+.tier-card.featured {
+border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,168,150,0.08);
+}
+.featured-tag {
+position: absolute; top: 0; right: 0; background: var(--primary); color: white; font-size: 0.75rem; font-weight: bold; padding: 0.4rem 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom-left-radius: 12px;
+}
+.tier-badge {
+display: inline-block; background: #ccfbf1; color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 1rem;
+}
+.tier-badge.best-value { background: #e0f2fe; color: #0369a1; }
+.tier-title {
+font-size: 1.75rem; margin: 0 0 0.5rem; color: var(--secondary);
+}
+.tier-description {
+color: #475569; font-size: 1rem; margin-bottom: 1.5rem; max-width: 650px;
+}
+.features-list {
+list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.95rem; color: #334155;
+}
+.features-list li {
+display: flex; align-items: center; gap: 0.5rem;
+}
+.pricing-panel {
+background: #f8fafc; border-left: 1px solid #e2e8f0; padding-left: 2rem; display: flex; flex-direction: column; justify-content: center;
+}
+.price-tag {
+font-size: 2.5rem; font-weight: bold; color: var(--secondary); margin: 0; line-height: 1;
+}
+.retail-crossed {
+font-size: 1.1rem; color: #94a3b8; text-decoration: line-through; margin-left: 0.5rem; font-weight: normal;
+}
+.savings-label {
+color: var(--dark); font-weight: 600; font-size: 0.9rem; margin: 0.25rem 0 1.5rem;
+}
+.btn-buy {
+display: block; width: 100%; padding: 1.1rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.1s; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0, 168, 150, 0.2);
+}
+.btn-buy:hover {
+background: var(--secondary); transform: translateY(-1px);
+}
+.btn-buy:active {
+transform: translateY(1px);
+}
+.tier-meta {
+font-size: 0.8rem; color: #64748b; text-align: center; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.25rem; padding: 0 0.5rem;
+}
+.timeline-callout {
+font-weight: 600; color: var(--secondary); font-size: 0.85rem;
+}
+.trust-footer {
+background: white; border-top: 1px solid #e2e8f0; padding: 3rem 1rem; text-align: center; margin-top: 6rem;
+}
+.trust-grid {
+max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+}
+.trust-item h4 { color: var(--secondary); margin: 0 0 0.5rem; font-size: 1.1rem; }
+.trust-item p { color: #64748b; margin: 0; font-size: 0.9rem; }
+
+@media (max-width: 900px) {
+  .tier-card { grid-template-columns: 1fr; padding: 2rem; }
+  .pricing-panel { border-left: none; border-top: 1px solid #e2e8f0; padding-left: 0; padding-top: 2rem; }
+  .features-list { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style> 
+</head> 
+<body> 
+
+<header> 
+<div class="nav-container"> 
+<a href="index.html" class="logo">EcoStream™</a> 
+<div class="nav-actions"> 
+<nav> 
+<ul class="nav-links"> 
+<li><a href="index.html">Back to Home</a></li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</header> 
+
+<main class="checkout-section">
+  <h1 class="page-title">Exclusive VIP Pre-Order Access</h1>
+  <p class="page-subtitle">Our patented utility engineering is complete. Lock in factory-direct production line pricing below before our public consumer retail launch.</p>
+
+  <div class="tier-layout">
+
+    <!-- LEVEL 1: 1-PACK PRE-ORDER -->
+    <div class="tier-card featured">
+      <div class="featured-tag">VIP Launch Price</div>
+      <div>
+        <span class="tier-badge">40% Off Estimated Retail</span>
+        <h3 class="tier-title">EcoStream 1-Pack System</h3>
+        <p class="tier-description">Secure a complete, patented EcoStream applicator hardware set from our initial factory production run. Engineered for independent home luxury and absolute accessibility.</p>
+        <ul class="features-list">
+          <li>✔ 1× Patented EcoStream Heated Wand Unit</li>
+          <li>✔ 1× Safe-Grip Charging Smart Dock</li>
+          <li>✔ Extended 1-Year Structural Warranty</li>
+          <li>✔ Complete Factory-Direct Delivery Tracking</li>
+        </ul>
+      </div>
+      <div class="pricing-panel">
+        <div class="price-tag">$129 <span class="retail-crossed">$215</span></div>
+        <div class="savings-label">Save $86 Instantly</div>
+        
+        <!-- HIGH TRAFFIC CLICK TARGET: Replace URL with your live checkout link -->
+        <a href="https://stripe.com" class="btn-buy">Secure Pre-Order Now</a>
+        
+        <div class="tier-meta">
+          <span style="color: #ef4444; font-weight: 600;">⚠️ Limited VIP Slots Left</span>
+          <span class="timeline-callout">🚢 Est. Manufacturing: Sept 2027</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2: 2-PACK PRE-ORDER -->
+    <div class="tier-card">
+      <div>
+        <span class="tier-badge best-value">Best Value Combo</span>
+        <h3 class="tier-title">EcoStream 2-Pack System</h3>
+        <p class="tier-description">Perfect for multi-bathroom households or to share independent living and luxury warmth with a parent, spouse, or loved one in need of zero-strain reach assistance.</p>
+        <ul class="features-list">
+          <li>✔ 2× Patented EcoStream Heated Wand Units</li>
+          <li>✔ 2× Safe-Grip Charging Smart Docks</li>
+          <li>✔ Upgraded Priority Production Handling</li>
+          <li>✔ VIP Manufacturer Assembly Log Access</li>
+        </ul>
+      </div>
+      <div class="pricing-panel">
+        <div class="price-tag">$199 <span class="retail-crossed">$430</span></div>
+        <div class="savings-label">Save $231 (Buy 1, Get 2nd Over 60% Off)</div>
+        
+        <!-- HIGH TRAFFIC CLICK TARGET: Replace URL with your live checkout link -->
+        <a href="https://stripe.com" class="btn-buy" style="background: var(--secondary); box-shadow: 0 4px 12px rgba(2, 128, 144, 0.2);">Secure Pre-Order Now</a>
+        
+        <div class="tier-meta">
+          <span style="color: var(--secondary); font-weight: 600;">🔥 Most Popular Selection</span>
+          <span class="timeline-callout">🚢 Est. Manufacturing: Sept 2027</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="trust-footer">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <h4>🔒 Secured Checkout Gateway</h4>
+      <p>Transactions are fully encrypted. Your pre-order directly triggers custom tooling scheduling.</p>
+    </div>
+    <div class="trust-item">
+      <h4>🛠️ Fully Patented IP</h4>
+      <p>Your orders fund the authentic, original inventor. Covered under issued utility patent protections.</p>
+    </div>
+    <div class="trust-item">
+      <h4>📬 Direct Assembly Updates</h4>
+      <p>Track raw production flow with regular development logs sent from the factory floor straight to your email.</p>
+    </div>
+  </div>
+  <p style="margin-top: 3rem; font-size: 0.85rem; color: #94a3b8;">&copy; 2026 EcoStream Technologies Inc. All rights reserved. Intellectual Property Protected Under Issued Utility Patents.</p>
+</footer>
+
+</body> 
+</html>
